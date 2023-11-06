@@ -1,53 +1,36 @@
 using System;
 
-
 public class Test
-
-
 {
-    public static double CalcDistance(double x1, double y1, double x2, double y2)
+    public static double Harmonic(double a, double b)
     {
-        double Distance = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
-        return Distance;
+        double res = (2 / ((1 / a) + (1 / b)));
+        return res;
     }
-
-    public static double CalcPerimetr(double a, double b, double c)
+    public static double Heometric(double a, double b)
     {
-        return a + b + c;
+        double res = Math.Sqrt(a * b);
+        return res;
     }
-
-    public static double CalcHalfPerimeter(double a, double b, double c)
+    public static double Arifmetic(double a, double b)
     {
-        return CalcPerimetr(a, b, c) / 2.0;
+        double res = (a + b) / 2;
+        return res;
     }
-
-    public static double Heron(double a, double b, double c)
+    public static double Qubic(double a, double b)
     {
-        double p = CalcHalfPerimeter(a, b, c);
-        return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+        double res = Math.Sqrt((a * a) + (b * b)) / Math.Sqrt(2);
+        return res;
     }
-
     public static void Main()
     {
         string[] str = Console.ReadLine().Split(' ');
-        double x1 = double.Parse(str[0]);
-        double y1 = double.Parse(str[1]);
+        int a = Convert.ToInt32(str[0]);
+        int b = Convert.ToInt32(str[1]);
 
-        string[] str1 = Console.ReadLine().Split(' ');
-        double x2 = double.Parse(str[0]);
-        double y2 = double.Parse(str[1]);
-
-        string[] str2 = Console.ReadLine().Split(' ');
-        double x3 = double.Parse(str[0]);
-        double y3 = double.Parse(str[1]);
-
-        double a = CalcDistance(x1, y1, x2, y2);
-        double b = CalcDistance(x3, y3, x2, y2);
-        double c = CalcDistance(x1, y1, x3, y3);
-
-
-
-    
-        Console.WriteLine(Heron(a, b, c));
+        Console.WriteLine(Harmonic(a, b));
+        Console.WriteLine(Heometric(a, b));
+        Console.WriteLine(Arifmetic(a, b));
+        Console.WriteLine(Qubic(a, b));
     }
 }
