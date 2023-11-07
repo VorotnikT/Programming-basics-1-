@@ -1,36 +1,29 @@
 using System;
 
-public class Test
+class Test
 {
-    public static double Harmonic(double a, double b)
+
+   public static int Calc(int z, int h)
     {
-        double res = (2 / ((1 / a) + (1 / b)));
-        return res;
+        return (937 / z); 
     }
-    public static double Heometric(double a, double b)
+    public static int CalcA(int z, int h)
     {
-        double res = Math.Sqrt(a * b);
-        return res;
+        return 1023 / Calc(z, h);       
     }
-    public static double Arifmetic(double a, double b)
+    public static int CalcB(int z, int h)
     {
-        double res = (a + b) / 2;
-        return res;
+        return 1023 % Calc(z, h);
     }
-    public static double Qubic(double a, double b)
-    {
-        double res = Math.Sqrt((a * a) + (b * b)) / Math.Sqrt(2);
-        return res;
-    }
+
     public static void Main()
     {
         string[] str = Console.ReadLine().Split(' ');
-        int a = Convert.ToInt32(str[0]);
-        int b = Convert.ToInt32(str[1]);
+        int z = Convert.ToInt32(str[0]);
+        int h = Convert.ToInt32(str[1]);
 
-        Console.WriteLine(Harmonic(a, b));
-        Console.WriteLine(Heometric(a, b));
-        Console.WriteLine(Arifmetic(a, b));
-        Console.WriteLine(Qubic(a, b));
+       /* Console.WriteLine(CalcA(z, h)), (CalcB(z, h));*/
+        Console.WriteLine($"{CalcA(z, h)} {CalcB(z, h)}");
+       /* Console.WriteLine(CalcB(z, h));*/
     }
 }
